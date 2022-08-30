@@ -21,10 +21,10 @@ import {AuthService} from "./service/auth.service"
   ],
   imports: [
     BrowserModule,
-    DashboardModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DashboardModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

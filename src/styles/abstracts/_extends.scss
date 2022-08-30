@@ -1,0 +1,39 @@
+%dashboard-logo{
+    text-align:center;
+    cursor: pointer;
+    width: 150px;
+    height:120px;
+    margin:10px auto;
+}
+
+%sidenav-btn-link{
+    display: block;
+    text-decoration: none;
+    margin: 10px  0;
+ 
+    text-transform: capitalize;
+    font-size: 13px;
+    padding: 10px ;
+    padding-left: 15px;
+    padding-right: 0;
+}
+
+%arrow-icon-style{
+    font-size: 18px;
+    float: right;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    color: #3c4858;
+}
+
+%rtm-button{
+    
+    margin: 10px 15px 0;
+    border-radius: 3px;
+    text-transform: capitalize;
+    font-size: 13px;
+    padding: 10px ;
+    padding-left: 15px;
+    padding-right: 0;
+}

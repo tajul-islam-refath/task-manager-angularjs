@@ -32,6 +32,6 @@ export class AuthService {
   }
 
   getUser(){
-    return localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") || '{}') : {};
+    return localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user") || '{}') : null;
   }
 }

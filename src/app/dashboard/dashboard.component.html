@@ -1,1 +1,14 @@
-<p>welcome {{user.displayName}}</p>
+<div class="admin">
+    <div class="admin-dashbord">
+        <div
+            id="mySidenav"
+            class="admin-dashbord__sidenav"
+        >
+          <app-sidenav></app-sidenav>
+        </div>
+        <div class="admin-dashbord__main" id="admin-dashbord__main">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
