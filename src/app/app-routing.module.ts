@@ -8,7 +8,6 @@ const routes: Routes = [
   // {path:'', redirectTo:'/dashboard', pathMatch:'full'},
   {
     path:"", 
-    canActivate:[UserGuard],
     component: LoginComponent
   },
   {

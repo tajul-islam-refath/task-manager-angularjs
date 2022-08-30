@@ -1,7 +1,15 @@
 <div class="login">
   <div class="login__center">
-      <button class="login__button  shadow" (click)="login()" >
+      <!-- <button class="login__button  shadow" (click)="login()" >
+        <i class="bi bi-google"></i>
         <h2 class="login__title">Google Sign In</h2>
-      </button>
+      </button> -->
+
+      <div class="google-btn" (click)="login()">
+        <div class="google-icon-wrapper">
+          <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+        </div>
+        <p class="btn-text"><b>Sign in with google</b></p>
+      </div>
   </div>
 </div>

@@ -4,7 +4,9 @@
             id="mySidenav"
             class="admin-dashbord__sidenav"
         >
-          <app-sidenav></app-sidenav>
+          <app-sidenav
+          [profile] ="user"
+          ></app-sidenav>
         </div>
         <div class="admin-dashbord__main" id="admin-dashbord__main">
             <router-outlet></router-outlet>

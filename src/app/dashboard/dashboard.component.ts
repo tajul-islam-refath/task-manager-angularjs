@@ -6,11 +6,11 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  user: any;
+  user: object = {};
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     this.user = this.authService.getUser();
-    console.log(this.user);
+    
   }
 }

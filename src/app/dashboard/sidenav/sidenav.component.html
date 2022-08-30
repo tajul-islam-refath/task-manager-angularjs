@@ -1,36 +1,72 @@
 <nav class="admin-nav">
-    <div class="logo" routerLink="/">
-        <h3>Task Manager</h3>
+  <div class="profile">
+    <div class="profile--img">
+      <img src="https://lh3.googleusercontent.com/a-/AFdZucrLbASFFEthAlX2nZHQuOfatEVbvCer_z-Xgxciqg=s96-c" alt="" />
     </div>
-    <div class="sidebarMenu">
-        <ul class="sidebarMenu__list">
-            <li
-                class="sidebarMenu__list__item"
-                routerLink="/dashboard/admin/home"
-                routerLinkActive="active"
-            >
-                <a class="sidebarMenu__list__item__link">
-                    <p>Dashbord</p>
-                </a>
-            </li>
+    <h4 class="profile--name">
+      {{profile?.displayName}}
+    </h4>
+  </div>
+  <div class="sidebarMenu">
+    <ul class="sidebarMenu__list">
+      <li
+        class="sidebarMenu__list__item"
+        routerLink="/dashboard"
+        routerLinkActive="active"
+      >
+        <a class="sidebarMenu__list__item__link">
+          <i class="bi bi-grid-1x2"></i>
+          <p>Dashbord</p>
+        </a>
+      </li>
+      <li 
+      class="sidebarMenu__list__item"
+      routerLink="/dashboard/create-new"
+      routerLinkActive="active"
+      >
+        <a class="sidebarMenu__list__item__link">
+          <i class="bi bi-pencil-square"></i>
+          <p>Create New</p>
+        </a>
+      </li>
 
+      <li class="sidebarMenu__list__item"
+      routerLink="/dashboard/new-task"
+      routerLinkActive="active"
+      >
+        <a class="sidebarMenu__list__item__link">
+          <i class="bi bi-list-nested"></i>
+          <p>New Task</p>
+        </a>
+      </li>
 
-
-            <li class="sidebarMenu__list__item">
-              
-                <a class="sidebarMenu__list__item__link">
-                    
-                    <p>Students</p>
-                </a>
-            </li>
-            <li class="sidebarMenu__list__item">
-              
-                <a class="sidebarMenu__list__item__link">
-                  
-                    <p>Staff</p>
-                </a>
-            </li>
-           
-        </ul>
-    </div>
+      <li class="sidebarMenu__list__item"
+      routerLink="/dashboard/in-progress"
+      routerLinkActive="active"
+      >
+        <a class="sidebarMenu__list__item__link">
+          <i class="bi bi-bar-chart-line"></i>
+          <p>In Progress</p>
+        </a>
+      </li>
+      <li class="sidebarMenu__list__item">
+        <a class="sidebarMenu__list__item__link">
+          <i class="bi bi-check2-circle"></i>
+          <p>Completed</p>
+        </a>
+      </li>
+      <li class="sidebarMenu__list__item">
+        <a class="sidebarMenu__list__item__link">
+          <i class="bi bi-x-circle"></i>
+          <p>Canceled</p>
+        </a>
+      </li>
+      <li class="sidebarMenu__list__item" (click)="logOut()">
+        <a class="sidebarMenu__list__item__link">
+          <i class="bi bi-x-circle"></i>
+          <p>Sign Out</p>
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>
