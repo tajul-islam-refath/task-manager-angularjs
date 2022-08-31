@@ -13,7 +13,8 @@ const routes: Routes = [
     path:'',
     component:DashboardComponent,
     children:[
-      {path:'', component:HomeComponent},
+      {path:'', redirectTo:'/dashboard/dashboard', pathMatch:"full"},
+      {path:"dashboard", component:HomeComponent},
       {path:"create-new", component:CreateNewComponent},
       {path:'new-task', component:NewTaskComponent},
       {path:'in-progress', component:InProgressComponent},

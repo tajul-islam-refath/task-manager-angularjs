@@ -6,8 +6,23 @@
         display: flex;
         justify-content: center;
     }
-    .new--form {
+    .form {
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         padding: 20px 15px;
+        &__title{
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        &__btn{
+            border: none;
+            padding: 6px 30px;
+            background: linear-gradient(90deg, #fa4a6f 36%, #dd8c9f 100%);
+            color:#fff;
+            font-size: 22px;
+            border: 1px solid #fa4a6f;
+            display: block;
+            width: 100%;
+        }
     }
 }

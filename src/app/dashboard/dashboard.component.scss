@@ -7,9 +7,9 @@
       height: 100%;
       width: 100%;
       position: relative;
-      @include break(medium) {
-        display: inline-block;
-      }
+      // @include break(medium) {
+      //   display: inline-block;
+      // }
       &__sidenav{
         width: 300px; 
         position: sticky;
@@ -22,20 +22,20 @@
         &::-webkit-scrollbar {
             display: none;
         }
-        @include break(medium) {
-          position: fixed;
-          top: 0;
-          max-height: calc(100vh);
-          z-index: 999;
-          width: 300px;
-        } 
+        // @include break(medium) {
+        //   position: fixed;
+        //   top: 0;
+        //   max-height: calc(100vh);
+        //   z-index: 999;
+        //   width: 300px;
+        // } 
       }
 
       &__sidenav--active{
         width:300px;
-        @include break(medium) {
-          width:0px;
-        }
+        // @include break(medium) {
+        //   width:0px;
+        // }
       }
     
       &__main{

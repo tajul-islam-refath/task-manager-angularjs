@@ -1,7 +1,7 @@
 <nav class="admin-nav">
   <div class="profile">
     <div class="profile--img">
-      <img src="https://lh3.googleusercontent.com/a-/AFdZucrLbASFFEthAlX2nZHQuOfatEVbvCer_z-Xgxciqg=s96-c" alt="" />
+      <img src={{profile?.photoURL}} alt="" />
     </div>
     <h4 class="profile--name">
       {{profile?.displayName}}
@@ -11,7 +11,7 @@
     <ul class="sidebarMenu__list">
       <li
         class="sidebarMenu__list__item"
-        routerLink="/dashboard"
+        routerLink="/dashboard/dashboard"
         routerLinkActive="active"
       >
         <a class="sidebarMenu__list__item__link">

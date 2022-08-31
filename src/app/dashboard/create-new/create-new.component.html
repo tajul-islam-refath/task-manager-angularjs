@@ -1,18 +1,32 @@
 <div class="new">
-    <div class="container">
-       <div class="col-md-6">
-         <form action="" class="new--form">
-            <div class="mb-3">
-              <label for="" class="form-label">Task Title</label>
-              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label">
-                Task Description
-              </label>
-              <textarea class="form-control" name="" id="" rows="3"></textarea>
-            </div>
-        </form>
-       </div>
+  <div *ngIf="loading;" class="text-center w-100 h-100">
+    <div  class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+      
     </div>
+  </div>
+
+  <div *ngIf="!loading" class="container">
+    <div class="col-md-6">
+      <form  action="" class="form" (submit)="create()" >
+        <h3 class="form__title">Create New Task</h3>
+        <div class="mb-3">
+          <label for="title" class="form-label">Task Title</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            class="form-control"
+            placeholder="Title"
+            [(ngModel)]="title"
+          />
+         
+        </div>
+        <div class="mb-3">
+          <label for="des" class="form-label"> Task Description </label>
+          <textarea class="form-control" name="des" id="des" rows="3" [(ngModel)]="des"></textarea>
+        </div>
+        <button class="form__btn">Create</button>
+      </form>
+    </div>
+  </div>
 </div>

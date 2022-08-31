@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -10,6 +12,7 @@ export class AuthService {
   user: any;
   constructor(
     private angularFireAuth: AngularFireAuth,
+    private db: AngularFirestore,
     private route: Router
   ) {}
 
@@ -38,5 +41,17 @@ export class AuthService {
   logOut():void{
     localStorage.removeItem("user");
     this.route.navigate(['/']);
+  }
+
+  async addNewTask(user : any ,task:object){
+    try{
+
+      let res = await this.db.collection("tasks").doc(user.uid).collection("task").add(task)
+      console.log(res)
+      return true;
+    }catch(error){
+      console.log(error)
+      return false;
+    }
   }
 }
