@@ -1,0 +1,37 @@
+.task-card{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 15px;
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left{
+            i{
+                margin-left: 6px;
+                &:hover{
+                    cursor: pointer;
+                    color: #fa4a6f;
+                }
+            }
+        }
+        .status{
+            
+            padding: 3px 6px;
+            border-radius: 3px;
+            color:#fff;
+        }
+        .New{
+            background-color: #5DADE2;
+        }
+        .Progress{
+            background-color: #48C9B0 ;
+        }
+        .Completed{
+            background-color: #58D68D  ;
+        }
+
+        .Canceled{
+            background-color: #EC7063   ;
+        }
+    }
+}

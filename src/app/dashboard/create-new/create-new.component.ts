@@ -33,6 +33,8 @@ export class CreateNewComponent implements OnInit {
         createdAt:this.createdAt,
       },)
       this.loading = false
+      this.title ="";
+      this.des = "";
   }
 }
 

@@ -38,20 +38,33 @@ export class AuthService {
       : null;
   }
 
-  logOut():void{
-    localStorage.removeItem("user");
+  async logOut(): Promise<void> {
+    await this.angularFireAuth.signOut();
+    localStorage.removeItem('user');
     this.route.navigate(['/']);
   }
 
-  async addNewTask(user : any ,task:object){
-    try{
-
-      let res = await this.db.collection("tasks").doc(user.uid).collection("task").add(task)
-      console.log(res)
+  async addNewTask(user: any, task: object) {
+    try {
+      let res = await this.db
+        .collection('tasks')
+        .doc(user.uid)
+        .collection('task')
+        .add(task);
+      console.log(res);
       return true;
-    }catch(error){
-      console.log(error)
+    } catch (error) {
+      console.log(error);
       return false;
     }
+  }
+
+ async getTasks(user: any, status: string): Promise<any> {
+  
+     return  this.db
+       .collection('tasks')
+       .doc(user.uid)
+       .collection('task', (ref) => ref.where('status', '==', status))
+       .valueChanges()
   }
 }

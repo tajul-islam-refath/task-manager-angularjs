@@ -11,6 +11,7 @@ import { NewTaskComponent } from './new-task/new-task.component';
 import { InProgressComponent } from './in-progress/in-progress.component';
 import { CompletedComponent } from './completed/completed.component';
 import { CanceledComponent } from './canceled/canceled.component';
+import { TaskCardComponent } from './task-card/task-card.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CanceledComponent } from './canceled/canceled.component';
     NewTaskComponent,
     InProgressComponent,
     CompletedComponent,
-    CanceledComponent
+    CanceledComponent,
+    TaskCardComponent
   ],
   imports: [
     CommonModule,

@@ -1,1 +1,11 @@
-<p>new-task works!</p>
+<div class="task">
+    <div class="container">
+        <div *ngIf = "tasks"  class="row">
+            <div class="col-md-4" *ngFor="let task of tasks" >
+                <app-task-card
+                 [task]="task"
+                ></app-task-card>
+            </div>
+        </div>
+    </div>
+</div>

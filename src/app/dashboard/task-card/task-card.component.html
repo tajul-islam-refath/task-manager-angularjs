@@ -1,0 +1,16 @@
+<div *ngIf="task" class="task-card">
+    <h3 class="task-card__title">{{task?.title}}</h3>
+    <p class="task-card__des">
+        {{task?.des}}
+    </p>
+    <div class="task-card__footer">
+        <div class="left">
+            <span>{{task?.createdAt}}</span>
+            <i class="bi bi-pencil-square"></i>
+            <i class="bi bi-trash-fill"></i>
+        </div>
+        <p class="status" [ngClass]="task?.status">
+            <span>{{task?.status}}</span>
+        </p>
+    </div>
+</div>
