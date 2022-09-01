@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 
 <a  href="#">
-   <img  width="100%"  height="100%"  src="./img/Screenshot (1).png>
+   <img  width="100%"  height="100%"  src="./img/screenshot1.png">
 </a>
 
 ## Development server
