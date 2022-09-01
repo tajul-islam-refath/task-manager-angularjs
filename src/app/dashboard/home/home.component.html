@@ -4,35 +4,35 @@
             <div class="col-sm-6 col-md-4 mb-4">
                 <app-card
                  title="Total Task"
-                 total="4"
+                 [total]="tasks.length"
                 >
                 </app-card>
             </div>
             <div class="col-sm-6 col-md-4 mb-4">
                 <app-card
                 title="Total New"
-                total="4"
+                [total]="new"
                >
                </app-card>
             </div>
             <div class="col-sm-6 col-md-4 mb-4">
                 <app-card
                 title="Total In Progress"
-                total="4"
+                [total]="progress"
                >
                </app-card>
             </div>
             <div class="col-sm-6 col-md-4 mb-4">
                 <app-card
                 title="Total Completed"
-                total="4"
+                [total]="completed"
                >
                </app-card>
             </div>
             <div class="col-sm-6 col-md-4 mb-4">
                 <app-card
                 title="Total Canceled"
-                total="4"
+                [total]=""
                >
                </app-card>
             </div>

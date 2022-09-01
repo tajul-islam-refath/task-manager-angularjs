@@ -67,4 +67,13 @@ export class AuthService {
        .collection('task', (ref) => ref.where('status', '==', status))
        .valueChanges()
   }
+
+  
+ async getAll(user: any): Promise<any> {
+  return  this.db
+    .collection('tasks')
+    .doc(user.uid)
+    .collection('task')
+    .valueChanges()
+}
 }

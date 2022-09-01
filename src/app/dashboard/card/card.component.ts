@@ -8,12 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardComponent implements OnInit {
 
   @Input() title? : string;
-  @Input() total?:string;
+  @Input() total?:number = 0;
   
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.title)
+    
   }
 
 }
