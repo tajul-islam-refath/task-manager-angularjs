@@ -7,6 +7,18 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 <a  href="#">
    <img  width="100%"  height="100%"  src="./img/screenshot1.png">
 </a>
+<a  href="#">
+   <img  width="100%"  height="100%"  src="./img/screenshot2.png">
+</a>
+<a  href="#">
+   <img  width="100%"  height="100%"  src="./img/screenshot3.png">
+</a>
+<a  href="#">
+   <img  width="100%"  height="100%"  src="./img/screenshot4.png">
+</a>
+<a  href="#">
+   <img  width="100%"  height="100%"  src="./img/screenshot5.png">
+</a>
 
 ## Development server
 
