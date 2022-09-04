@@ -62,7 +62,7 @@ export class AuthService {
 
   async getTasks(user: any, status: string): Promise<[]> {
     let result: any = [];
-
+    console.log(this.route.url)
     await this.db
       .collection('tasks')
       .doc(user.uid)
@@ -82,6 +82,7 @@ export class AuthService {
   }
 
   async getAll(user: any): Promise<any> {
+    
     let res: { id: string; doc: firebase.firestore.DocumentData }[] = [];
     await this.db
       .collection('tasks')
@@ -100,7 +101,11 @@ export class AuthService {
     return res;
   }
 
-  // async update(user: any , id :string):Promise<any>{
-  //   return this.db.doc(user.uid).collection("task").doc(id).update()
-  // }
+  async update(user: any , id :string, doc:object){
+    try{
+      await this.db.collection("tasks").doc(user.uid).collection("task").doc(id).update(doc);
+    }catch(error){
+      window.alert("Error")
+    }
+  }
 }
