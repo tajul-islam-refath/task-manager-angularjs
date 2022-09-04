@@ -8,13 +8,16 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 
 
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { LoginComponent } from './login/login.component';
 
 // import services
-import {AuthService} from "./service/auth.service"
+import {AuthService} from "./service/auth.service";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import {AuthService} from "./service/auth.service"
     AngularFirestoreModule,
     AppRoutingModule,
     DashboardModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

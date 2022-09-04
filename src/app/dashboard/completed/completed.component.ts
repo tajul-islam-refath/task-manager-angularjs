@@ -8,7 +8,7 @@ import {AuthService} from "../../service/auth.service";
 })
 export class CompletedComponent implements OnInit {
   public user:object = {};
-  public tasks:any = []
+  public tasks = []
   constructor(
     private auth : AuthService
   ) { }
@@ -21,10 +21,7 @@ export class CompletedComponent implements OnInit {
   
   async getTasks(){
     let res = await this.auth.getTasks(this.user , "Completed");
-    res.subscribe((tasks: any) => {
-      console.log(tasks)
-      this.tasks = tasks
-    });
+    this.tasks = res
   }
 
 }

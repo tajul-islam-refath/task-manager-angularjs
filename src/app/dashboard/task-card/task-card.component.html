@@ -1,16 +1,76 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Task Update</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form action="" class="form" (submit)="update()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Task Title</label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          class="form-control"
+          placeholder="Title"
+          [(ngModel)]="title"
+          value="{{ title }}"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="des" class="form-label"> Task Description </label>
+        <textarea
+          class="form-control"
+          name="des"
+          id="des"
+          rows="3"
+          [(ngModel)]="des"
+          value="{{ des }}"
+        ></textarea>
+      </div>
+      <select
+        [(ngModel)]="status"
+        name="status"
+        class="form-select mb-4"
+        aria-label="Default select example"
+      >
+        <option selected>{{ status }}</option>
+        <option value="New">New</option>
+        <option value="Progress">Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <button
+        type="submit"
+        class="btn btn-outline-dark"
+        (click)="modal.close('Save click')"
+      >
+        Update
+      </button>
+    </form>
+  </div>
+</ng-template>
+
 <div *ngIf="task" class="task-card">
-    <h3 class="task-card__title">{{task?.title}}</h3>
-    <p class="task-card__des">
-        {{task?.des}}
-    </p>
-    <div class="task-card__footer">
-        <div class="left">
-            <span>{{task?.createdAt}}</span>
-            <i class="bi bi-pencil-square"></i>
-            <i class="bi bi-trash-fill"></i>
-        </div>
-        <p class="status" [ngClass]="task?.status">
-            <span>{{task?.status}}</span>
-        </p>
+  <h3 class="task-card__title">{{ task.doc?.title }}</h3>
+  <h6>
+    Task ID: <span>{{ task.id }}</span>
+  </h6>
+  <p class="task-card__des">
+    {{ task.doc?.des }}
+  </p>
+  <div class="task-card__footer">
+    <div class="left">
+      <span>{{ task.doc?.createdAt }}</span>
+      <i class="bi bi-pencil-square" (click)="open(content)"></i>
+      <i class="bi bi-trash-fill"></i>
     </div>
+    <p class="status" [ngClass]="task.doc?.status">
+      <span>{{ task.doc?.status }}</span>
+    </p>
+  </div>
 </div>

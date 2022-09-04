@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 import { Router } from '@angular/router';
+import firebase from 'firebase/compat';
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +24,7 @@ export class AuthService {
   async AuthLogin(provider: any) {
     try {
       const result = await this.angularFireAuth.signInWithPopup(provider);
-      console.log(result);
+
       this.user = result.user;
       localStorage.setItem('user', JSON.stringify(this.user));
       this.route.navigate(['/dashboard']);
@@ -59,21 +60,47 @@ export class AuthService {
     }
   }
 
- async getTasks(user: any, status: string): Promise<any> {
-  
-     return  this.db
-       .collection('tasks')
-       .doc(user.uid)
-       .collection('task', (ref) => ref.where('status', '==', status))
-       .valueChanges()
+  async getTasks(user: any, status: string): Promise<[]> {
+    let result: any = [];
+
+    await this.db
+      .collection('tasks')
+      .doc(user.uid)
+      .collection('task')
+      .ref.get()
+      .then(function (doc) {
+        doc.docs.map((item) => {
+          if (item.data()['status'] == status) {
+            result.push({
+              id: item.id,
+              doc: item.data(),
+            });
+          }
+        });
+      });
+    return result;
   }
 
-  
- async getAll(user: any): Promise<any> {
-  return  this.db
-    .collection('tasks')
-    .doc(user.uid)
-    .collection('task')
-    .valueChanges()
-}
+  async getAll(user: any): Promise<any> {
+    let res: { id: string; doc: firebase.firestore.DocumentData }[] = [];
+    await this.db
+      .collection('tasks')
+      .doc(user.uid)
+      .collection('task')
+      .ref.get()
+      .then(function (doc) {
+        res = doc.docs.map((item) => {
+          return {
+            id: item.id,
+            doc: item.data(),
+          };
+        });
+      });
+
+    return res;
+  }
+
+  // async update(user: any , id :string):Promise<any>{
+  //   return this.db.doc(user.uid).collection("task").doc(id).update()
+  // }
 }

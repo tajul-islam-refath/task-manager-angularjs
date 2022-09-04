@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../service/auth.service";
 
+
+
 @Component({
   selector: 'app-new-task',
   templateUrl: './new-task.component.html',
@@ -8,9 +10,10 @@ import {AuthService} from "../../service/auth.service";
 })
 export class NewTaskComponent implements OnInit {
   public user:object = {};
-  public tasks:any = []
+  public tasks = []
   constructor(
-    private auth : AuthService
+    private auth : AuthService,
+
   ) { }
 
   ngOnInit(): void {
@@ -20,10 +23,9 @@ export class NewTaskComponent implements OnInit {
 
   async getTasks(){
     let res = await this.auth.getTasks(this.user , "New");
-    res.subscribe((tasks: any) => {
-      console.log(tasks)
-      this.tasks = tasks
-    });
+    this.tasks = res
   }
+
+  
 
 }
