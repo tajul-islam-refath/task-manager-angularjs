@@ -6,7 +6,8 @@ import { environment } from "src/environments/environment";
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StoreModule } from '@ngrx/store'
 
 
 
@@ -17,7 +18,10 @@ import { LoginComponent } from './login/login.component';
 
 // import services
 import {AuthService} from "./service/auth.service";
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+
+// reducers
+import {taskReducer} from "./state/task/task.reducer"
+
 
 @NgModule({
   declarations: [
@@ -32,7 +36,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     AppRoutingModule,
     DashboardModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    StoreModule.forRoot({task: taskReducer})
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

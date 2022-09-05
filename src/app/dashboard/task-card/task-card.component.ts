@@ -1,6 +1,13 @@
 import { Component, OnInit , Input } from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Store } from '@ngrx/store';
+
 import {AuthService} from "../../service/auth.service";
+import {
+  updateReq,
+  updateReset,
+  updateSuccess,
+} from '../../state/task/task.action';
 
 @Component({
   selector: 'app-task-card',
@@ -18,7 +25,8 @@ export class TaskCardComponent implements OnInit {
 
   constructor(
     private modalService: NgbModal,
-    private auth : AuthService
+    private auth : AuthService,
+    private store: Store<{ task: any }>
     ) { }
 
   ngOnInit(): void {
@@ -39,7 +47,8 @@ export class TaskCardComponent implements OnInit {
       status:this.status,
       des : this.des
     })
-    
+
+    this.store.dispatch(updateSuccess())
     window.alert("Update success")
   }
 
