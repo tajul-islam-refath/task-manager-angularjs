@@ -1,6 +1,13 @@
 # TaskManager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+### My Learning
+- Angular compunent
+- Angular Model
+- Angular Service
+- Angular routeing
+- Angular Guard
+- Angular With Firebase login , Cloude firestore 
+- Angular With State management with @ngrx
 
 
 <a  href="#">
