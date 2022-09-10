@@ -7,7 +7,7 @@
 - Angular routeing
 - Angular Guard
 - Angular With Firebase login , Cloude firestore 
-- Angular With State management with @ngrx
+- Angular State management with @ngrx
 
 
 <a  href="#">
